@@ -1,30 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <VersionPrefix>1.0.2</VersionPrefix>
-    <TargetFrameworks>netstandard1.6;net46;net45;net40</TargetFrameworks>
-    <AssemblyName>PartialDate</AssemblyName>
-    <PackageId>PartialDate</PackageId>
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
-    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netstandard1.6' ">$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <VersionPrefix>1.1.0</VersionPrefix>
+    <TargetFrameworks>netstandard2.0;net45;net46;</TargetFrameworks>
+    <Title>Partial Date</Title>
+    <Authors>Alan Savage</Authors>
+    <Description>A class which defines a date which can have null for components (day, month, year) of the date.</Description>
+    <Copyright>© 2017 Alan Savage</Copyright>
+    <PackageProjectUrl>https://github.com/alansav/partial_date</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/alansav/partial_date</RepositoryUrl>
+    <PackageTags>partial date;null day;null month;null year</PackageTags>
   </PropertyGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
 
 </Project>

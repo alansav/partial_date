@@ -1,6 +1,6 @@
 # partial date
 
-This project is a .NET Core application.
+This project is a .NET Standard 2.0 class library.
 
 This project provides a class which can be used to model a date which allows certain components of the date (day, month, year) to be null.
 
