@@ -1,5 +1,7 @@
 # partial date
 
+[![Build status](https://ci.appveyor.com/api/projects/status/2x6373ki974iqkw4?svg=true)](https://ci.appveyor.com/project/alansav/partial-date)
+
 This project is a .NET Standard 2.0 class library.
 
 This project provides a class which can be used to model a date which allows certain components of the date (day, month, year) to be null.

@@ -3,15 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9DC79D56-F510-414E-8A54-C6603A6DF0B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Savage.PartialDate", "Savage.PartialDate\Savage.PartialDate.csproj", "{09B9EC5F-D84D-4E62-B56C-06850BB616D9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{43D409DE-04C7-416F-B959-04C594ECCF3B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A9DDE565-5F95-43F4-B909-877F5C2F0AA1}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartialDate", "src\PartialDate\PartialDate.csproj", "{09B9EC5F-D84D-4E62-B56C-06850BB616D9}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "test\UnitTests\UnitTests.csproj", "{28EB2A7B-4B74-4C24-824A-70ADAFCC0212}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Savage.PartialDate.UnitTests", "Savage.PartialDate.UnitTests\Savage.PartialDate.UnitTests.csproj", "{28EB2A7B-4B74-4C24-824A-70ADAFCC0212}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,9 +24,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{09B9EC5F-D84D-4E62-B56C-06850BB616D9} = {9DC79D56-F510-414E-8A54-C6603A6DF0B3}
-		{28EB2A7B-4B74-4C24-824A-70ADAFCC0212} = {A9DDE565-5F95-43F4-B909-877F5C2F0AA1}
 	EndGlobalSection
 EndGlobal

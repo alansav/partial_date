@@ -4,11 +4,11 @@ namespace Savage
 {
     public class PartialDate
     {
-        public readonly int? Year;
-        public readonly int? Month;
-        public readonly int? Day;
+        public readonly short? Year;
+        public readonly byte? Month;
+        public readonly byte? Day;
 
-        public PartialDate(int? year, int? month, int? day)
+        public PartialDate(short? year, byte? month, byte? day)
         {
             if (!year.HasValue && !month.HasValue && !day.HasValue)
             {
@@ -35,17 +35,17 @@ namespace Savage
             Day = day;
         }
 
-        private bool YearIsValid(int? year)
+        private bool YearIsValid(short? year)
         {
             return !year.HasValue || year >= 1 && year <= 9999;
         }
 
-        private bool MonthIsValid(int? month)
+        private bool MonthIsValid(byte? month)
         {
             return !month.HasValue || month >= 1 && month <= 12;
         }
 
-        private bool DayIsValid(int? year, int? month, int? day)
+        private bool DayIsValid(short? year, byte? month, byte? day)
         {
             int maxDaysInMonth = DateTime.DaysInMonth(year ?? 2000, month ?? 1);
             return !day.HasValue || day >= 1 && day <= maxDaysInMonth;

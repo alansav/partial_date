@@ -10,9 +10,9 @@ namespace Savage
         {
             var sut = new PartialDate(2016, 3, 15);
 
-            Assert.Equal(2016, sut.Year);
-            Assert.Equal(3, sut.Month);
-            Assert.Equal(15, sut.Day);
+            Assert.Equal((short)2016, sut.Year);
+            Assert.Equal((byte)3, sut.Month);
+            Assert.Equal((byte)15, sut.Day);
         }
 
         [Fact]
@@ -22,22 +22,22 @@ namespace Savage
 
             var dateTime = partialDate.ToDateTime();
 
-            Assert.Equal(partialDate.Year, dateTime.Year);
-            Assert.Equal(partialDate.Month, dateTime.Month);
-            Assert.Equal(partialDate.Day, dateTime.Day);
+            Assert.Equal(2016, dateTime.Year);
+            Assert.Equal(3, dateTime.Month);
+            Assert.Equal(15, dateTime.Day);
         }
 
         [Theory]
-        [InlineData(2016, 3, 32)]
-        [InlineData(2016, 13, 31)]
-        [InlineData(10000, 3, 15)]
-        [InlineData(2016, 3, 0)]
-        [InlineData(2016, 0, 15)]
-        [InlineData(0, 3, 15)]
-        [InlineData(null, 2, 30)]
-        [InlineData(2001, 2, 29)]
+        [InlineData((short)2016, (byte)3, (byte)32)]
+        [InlineData((short)2016, (byte)13, (byte)31)]
+        [InlineData((short)10000, (byte)3, (byte)15)]
+        [InlineData((short)2016, (byte)3, (byte)0)]
+        [InlineData((short)2016, (byte)0, (byte)15)]
+        [InlineData((short)0, (byte)3, (byte)15)]
+        [InlineData(null, (byte)2, (byte)30)]
+        [InlineData((short)2001, (byte)2, (byte)29)]
         [InlineData(null, null, null)]
-        public void ThrowsExceptionWhenInitialisedWithInvalidValues(int? year, int? month, int? day)
+        public void ThrowsExceptionWhenInitialisedWithInvalidValues(short? year, byte? month, byte? day)
         {
             Assert.Throws<ArgumentException>(() => new PartialDate(year, month, day));
         }
@@ -46,9 +46,9 @@ namespace Savage
         public void InitialisesCorrectlyForPotentialLeapYear()
         {
             var sut = new PartialDate(null, 2, 29);
-            Assert.Equal(null, sut.Year);
-            Assert.Equal(2, sut.Month);
-            Assert.Equal(29, sut.Day);
+            Assert.Null(sut.Year);
+            Assert.Equal((byte)2, sut.Month);
+            Assert.Equal((byte)29, sut.Day);
         }
 
         [Fact]
@@ -61,10 +61,10 @@ namespace Savage
         }
 
         [Theory]
-        [InlineData(2000, 3, 15)]
-        [InlineData(2016, 4, 15)]
-        [InlineData(2016, 3, 16)]
-        public void EqualsOperatorReturnsFalseWhenDifferent(int? year, int? month, int? day)
+        [InlineData((short)2000, (byte)3, (byte)15)]
+        [InlineData((short)2016, (byte)4, (byte)15)]
+        [InlineData((short)2016, (byte)3, (byte)16)]
+        public void EqualsOperatorReturnsFalseWhenDifferent(short? year, byte? month, byte? day)
         {
             var a = new PartialDate(2016, 3, 15);
             var b = new PartialDate(year, month, day);
@@ -99,10 +99,10 @@ namespace Savage
         }
 
         [Theory]
-        [InlineData(null, 3, 15)]
-        [InlineData(2016, null, 15)]
-        [InlineData(2016, 3, null)]
-        public void IsCompleteDateReturnsFalse(int? year, int? month, int? day)
+        [InlineData(null, (byte)3, (byte)15)]
+        [InlineData((short)2016, null, (byte)15)]
+        [InlineData((short)2016, (byte)3, null)]
+        public void IsCompleteDateReturnsFalse(short? year, byte? month, byte? day)
         {
             var sut = new PartialDate(year, month, day);
             Assert.False(sut.IsCompleteDate);
@@ -132,10 +132,10 @@ namespace Savage
         }
 
         [Theory]
-        [InlineData(2015, 3, 15)]
-        [InlineData(2015, 4, 15)]
-        [InlineData(2016, 3, 16)]
-        public void GetHashCodeReturnsDifferentValues(int? year, int? month, int? day)
+        [InlineData((short)2015, (byte)3, (byte)15)]
+        [InlineData((short)2015, (byte)4, (byte)15)]
+        [InlineData((short)2016, (byte)3, (byte)16)]
+        public void GetHashCodeReturnsDifferentValues(short? year, byte? month, byte? day)
         {
             var a = new PartialDate(2016, 3, 15);
             var b = new PartialDate(year, month, day);
